@@ -1,0 +1,48 @@
+[
+  {
+    "Author": "Team Wrath, Eevi",
+    "Name": "Wrath Combo - Positional Forecast Test",
+    "InternalName": "WrathCombo",
+    "AssemblyVersion": "1.0.5.0",
+    "Description": "Testing fork of Wrath Combo that publishes upcoming positional forecasts for Avarice.",
+    "Punchline": "Wrath Combo with positional forecast IPC for Avarice testing.",
+    "Changelog": "Adds versioned positional forecast IPC and 1-3 GCD lookahead for melee jobs.",
+    "RepoUrl": "https://github.com/TimePurradox/WrathCombo",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadLinkInstall": "https://github.com/TimePurradox/WrathCombo/releases/download/1.0.5.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/TimePurradox/WrathCombo/releases/download/1.0.5.0/latest.zip",
+    "LastUpdate": 1782320135,
+    "IconUrl": "https://s3.puni.sh/media/plugin/60/icon-2bwhkn3zf1f.png",
+    "Tags": [
+      "combo",
+      "rotation",
+      "testing"
+    ]
+  },
+  {
+    "Author": "kawaii, NightmareXIV, Wah, Eevi",
+    "Name": "Avarice - Wrath Forecast Test",
+    "InternalName": "Avarice",
+    "AssemblyVersion": "2.2.1.0",
+    "Description": "Testing fork of Avarice that consumes Wrath Combo positional forecasts.",
+    "Punchline": "Avarice with predictive Wrath Combo positional integration.",
+    "Changelog": "Adds Wrath Combo forecast IPC integration, target validation, expiry, and diagnostics.",
+    "RepoUrl": "https://github.com/TimePurradox/Avarice",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadLinkInstall": "https://github.com/TimePurradox/Avarice/releases/download/2.2.1.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/TimePurradox/Avarice/releases/download/2.2.1.0/latest.zip",
+    "LastUpdate": 1782320135,
+    "IconUrl": "https://s3.puni.sh/media/plugin/11/icon-d95r9462spc.png",
+    "Tags": [
+      "combat",
+      "positionals",
+      "testing"
+    ]
+  }
+]

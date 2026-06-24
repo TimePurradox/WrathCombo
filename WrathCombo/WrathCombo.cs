@@ -64,6 +64,7 @@ public sealed partial class WrathCombo : IDalamudPlugin
     internal UIHelper UIHelper = null!;
     internal ActionRetargeting ActionRetargeting = null!;
     internal MovementHook MoveHook;
+    internal readonly PositionalForecastService PositionalForecast;
 
     internal static bool IsAprilFools => DateTime.UtcNow.Day == 1 && DateTime.UtcNow.Month == 4;
 
@@ -189,6 +190,7 @@ public sealed partial class WrathCombo : IDalamudPlugin
         PresetStorage.RemoveRedundantPresets();
 
         Service.ComboCache = new CustomComboCache();
+        PositionalForecast = new PositionalForecastService();
         Service.ActionReplacer = new ActionReplacer();
         Service.AutoRotationController = new AutoRotationController();
         ActionRetargeting = new ActionRetargeting();
@@ -355,6 +357,7 @@ public sealed partial class WrathCombo : IDalamudPlugin
             TargetHelper.Draw();
 
             AutoRotationController.Run();
+            PositionalForecast.Update();
 
             if (Player.IsDead)
             {
@@ -489,6 +492,7 @@ public sealed partial class WrathCombo : IDalamudPlugin
         Svc.PluginInterface.UiBuilder.Draw -= DrawUI;
 
         Service.ActionReplacer.Dispose();
+        PositionalForecast.Dispose();
         Service.ComboCache.Dispose();
         Service.AutoRotationController.Dispose();
         ActionWatching.Dispose();

@@ -6,6 +6,7 @@ using WrathCombo.Attributes;
 using WrathCombo.Combos.PvE;
 using WrathCombo.Core;
 using WrathCombo.CustomComboNS.Functions;
+using WrathCombo.Services;
 using WrathCombo.Services.ActionRequestIPC;
 using ECommonsJob = ECommons.ExcelServices.Job;
 
@@ -83,6 +84,10 @@ internal abstract partial class CustomCombo : CustomComboFunctions
         }
 
         uint resultingActionID = Invoke(actionID);
+        PositionalForecastService.ObserveResolvedAction(
+            Preset,
+            resultingActionID,
+            targetOverride);
 
         var presetException = _presetsAllowedToReturnUnchanged
             .TryGetValue(Preset, out var actionException);
